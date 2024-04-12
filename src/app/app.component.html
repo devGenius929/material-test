@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="search-bar">
+    <mat-form-field appearance="outline" class="example-full-width ">
+      <mat-label>Telephone</mat-label>
+      <button matPrefix mat-icon-button>
+      <mat-icon color="#77ce55"  fontIcon="search"></mat-icon>
+      </button>
+      <input matInput type="text" [(ngModel)]="searchValue">
+      @if (searchValue) {
+        <button matTextSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+          <mat-icon  fontIcon="close"></mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="league">
+        <th mat-header-cell *matHeaderCellDef> League </th>
+        <td mat-cell *matCellDef="let element"> {{element.league}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="player">
+        <th mat-header-cell *matHeaderCellDef> Player </th>
+        <td mat-cell *matCellDef="let element"> {{element.player}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="paymentDate">
+        <th mat-header-cell *matHeaderCellDef> Payment Date  </th>
+        <td mat-cell *matCellDef="let element"> {{element.paymentDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="paid">
+        <th mat-header-cell *matHeaderCellDef> Paid </th>
+        <td mat-cell *matCellDef="let element"> {{element.paid | number: '1.2-2'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="compensation">
+        <th mat-header-cell *matHeaderCellDef> Comp. </th>
+        <td mat-cell *matCellDef="let element"> {{element.compensation | number: '1.2-2'}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">x</tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[4, 8, 16, ELEMENT_DATA.length]"
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+
+</div>

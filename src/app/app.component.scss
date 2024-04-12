@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 10px 15px;
+    background-color: #5D6C88;
+  }
+
+  .search-bar {
+    width: 100%;
+    background-color: #3E475E;
+    border-radius: 4px;
+
+    mat-form-field {
+      margin-left: 15px;
+      mat-icon {
+        color: #77ce55;
+      }
+    }
+  }
+
+
+}

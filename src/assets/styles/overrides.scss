@@ -1,0 +1,19 @@
+.mdc-notched-outline.mdc-notched-outline--upgraded {
+  border-bottom: 1px solid black;
+  .mdc-notched-outline__notch {
+    border: none;
+  }
+
+  .mdc-notched-outline__trailing {
+    border: none;
+  }
+
+  .mdc-notched-outline__leading {
+    border: none;
+  }
+
+}
+
+.mat-mdc-form-field-icon-prefix {
+  margin-bottom: 10px;
+}
